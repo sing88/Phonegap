@@ -14,30 +14,47 @@ function init() {
 		
 		//Botones para las operaciones.
 		jQuery('#btnDiv').click(function(){
-			
-			num1 = jQuery('#txtNumero').val();
-			jQuery('#txtNumero').val('');
 			oper = '/';
+			if(oper.length === 0){
+				num1 = jQuery('#txtNumero').val();
+			}
+			if(oper.length > 0){
+				jQuery('#txtNumero').val('');
+				num2 = jQuery('#txtNumero').val();
+			}
 		});
 		
 		jQuery('#btnPor').click(function(){
-			
-			num1 = jQuery('#txtNumero').val();
-			jQuery('#txtNumero').val('');
 			oper = '*';
+			if(oper.length === 0){
+				num1 = jQuery('#txtNumero').val();
+			}
+			if(oper.length > 0){
+				jQuery('#txtNumero').val('');
+				num2 = jQuery('#txtNumero').val();
+			}
 		});
 		
 		jQuery('#btnMenos').click(function(){
-			
-			num1 = jQuery('#txtNumero').val();
-			jQuery('#txtNumero').val('');
 			oper = '-';
+			if(oper.length === 0){
+				num1 = jQuery('#txtNumero').val();
+			}
+			if(oper.length > 0){
+				jQuery('#txtNumero').val('');
+				num2 = jQuery('#txtNumero').val();
+			}
 		});
 		
 		jQuery('#btnMas').click(function(){
 			oper = '+';
-			num1 = jQuery('#txtNumero').val();
-			jQuery('#txtNumero').val('');
+			if(oper.length === 0){
+				num1 = jQuery('#txtNumero').val();
+			}
+			if(oper.length > 0){
+				jQuery('#txtNumero').val('');
+				num2 = jQuery('#txtNumero').val();
+			}
 		});
 		
 		// Botones para los numeros
@@ -86,10 +103,10 @@ function init() {
 			agregar('.');
 		});
 		
+		//btnIgual
+		
 		jQuery('#btnIgual').click(function(){
 			var resultado = 0;
-			num2 = jQuery('#txtNumero').val();	
-				
 			if(oper === '+'){
 				resultado = parseFloat(num1) + parseFloat(num2);
 			}
@@ -104,15 +121,18 @@ function init() {
 			}
 			if(resultado !== 0){
 				jQuery('#txtNumero').val(resultado);
-				num1 = 0;
-				num2 = 0;
-				oper = '';
 			}
 		});
+		
+		
 	}
 	function agregar(numeroNuevo){
 		var numero = jQuery('#txtNumero').val();
-		numero = numero.concat(numeroNuevo);
+		numero = numero + numeroNuevo;
 		jQuery('#txtNumero').val(numero);
 	}
+	function operar(){
+		
+	}
+
 }

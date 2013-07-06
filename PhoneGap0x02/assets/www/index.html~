@@ -43,7 +43,9 @@
             	<tr>
             		<td colspan=2><button id='btn0' style='width: 100%;' >0</button></td>
             		<td><button id='btnPunto'>.</button></td>
+            		
             	</tr>
+            	
             </table>
         </div>
         <script type="text/javascript" src="cordova-2.7.0.js"></script>
